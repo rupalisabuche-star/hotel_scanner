@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Placed</title>
+</head>
+<body>
+    <h1>Thank You {{ name }}!</h1>
+    <p>Your order for:</p>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <p>has been successfully placed.</p>
+</body>
+</html>

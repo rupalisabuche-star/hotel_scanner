@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ hotel[1] }}</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <h1>{{ hotel[1] }}</h1>
+    <img src="{{ hotel[5] }}" alt="Hotel Photo" class="hotel-photo">
+    <p>Address: {{ hotel[2] }}</p>
+    <p>Contact: {{ hotel[3] }}</p>
+    <p>Instagram: {{ hotel[4] }}</p>
+
+    <h2>Menu</h2>
+    <form action="/order" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="text" name="table" placeholder="Table No." required>
+        <div class="menu">
+            {% for dish in menu %}
+            <div class="dish">
+                <img src="{{ dish[4] }}" alt="Dish">
+                <p>{{ dish[2] }} - ₹{{ dish[3] }}</p>
+                <input type="checkbox" name="items" value="{{ dish[2] }}">
+            </div>
+            {% endfor %}
+        </div>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>
+<link rel="stylesheet" href="/static/style.css">
